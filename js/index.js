@@ -41,10 +41,6 @@ header.addEventListener('mouseleave',(event) => {
 })
 
 
-//******** Keydown Events:
-
-
-
 //******** Wheel Events: DONE
 let background = document.querySelector('.home');
 
@@ -53,40 +49,23 @@ background.addEventListener('wheel', (event) => {
  
 })
 
-//******** Drag/Drop Events:
 
 //******** Load Events: DONE!
-window.addEventListener('load', () => {
-    alert(`The page is loading`)
-})
-
-
-//******** Focus Events:
-let focus = document.querySelectorAll('.btn')
-
-focus.addEventListener('focus', () => {
-    focus.style.borderStyle = 'dotted'
-    focus.style.borderWidth = '2px'
-    focus.style.borderColor = 'green'
-}) 
-
-
-//******** Resize Events:
-
+// window.addEventListener('load', () => {
+//     alert(`The page is loading`)
+// })
 
 
 //******** Scroll Events: Done!!
- window.addEventListener('scroll', () => {
-    console.log('Scrolled!')
-    const scrollable = document.documentElement.scrollHeight - window.innerHeight
-    const scrolled = window.scrollY
+//  window.addEventListener('scroll', () => {
+//     console.log('Scrolled!')
+//     const scrollable = document.documentElement.scrollHeight - window.innerHeight
+//     const scrolled = window.scrollY
 
-    if(Math.ceil(scrolled) === scrollable) {
-        alert('You have reached the bottom')
-    }
- })
-
-//******** Select Events:
+//     if(Math.ceil(scrolled) === scrollable) {
+//         alert('You have reached the bottom')
+//     }
+//  })
 
 
 //******** dblClick Events: DONE
@@ -104,13 +83,34 @@ show.addEventListener('dblclick', () => {
 
 })
 
-
 // want to remove
-
-
 
 // show.addEventListener('dbclick', () => {
 //     console.log(`Hello has been removed`)
 //     hello.style.display = 'none'
 // })
+
+// input
+
+
+//******** focus Events: DONE
+
+const newForm = document.querySelector('.home')
+
+const form = document.createElement('input')
+form.style.margin = "20px"
+
+newForm.appendChild(form)
+
+ 
+form.addEventListener('focus', () => {
+    form.style.background = 'cyan'
+})
+
+//******** keydown Select: DONE
+ addEventListener('keydown', (event) => {
+     if(event.keycode == 86) {
+         document.body.style
+     }
+ })
 
