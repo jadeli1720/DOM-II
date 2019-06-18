@@ -45,6 +45,7 @@ header.addEventListener('mouseleave',(event) => {
 let background = document.querySelector('.home');
 
 background.addEventListener('wheel', (event) => {
+    console.log('Background changed to light peach!')
     background.style.background = '#FDDED7'
  
 })
@@ -76,10 +77,10 @@ hello.style.fontColor = 'black'
 hello.style.padding = '120px 0 0'
 hello.textContent ='Hello Travlers!'
 
-show.addEventListener('dblclick', () => { 
+show.addEventListener('click', () => { 
     console.log(`Hello has been clicked`)
-    show.prepend(hello);
-    // show.classList.toggle(show.prepend(hello))
+    // show.prepend(hello);
+    show.classList.toggle(show.prepend(hello))
 
 })
 
@@ -104,13 +105,17 @@ newForm.appendChild(form)
 
  
 form.addEventListener('focus', () => {
+    console.log(`form has been selected`)
     form.style.background = 'cyan'
 })
 
 //******** keydown Select: DONE
+const main = document.querySelector('.destination')
+
  addEventListener('keydown', (event) => {
-     if(event.keycode == 86) {
-         document.body.style
+    console.log('Background changed back to white!')
+     if(event.keycode == 86) {//keycode is the letter v
+         main.style.background = 'white'
      }
  })
 
