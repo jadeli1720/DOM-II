@@ -41,8 +41,8 @@ header.addEventListener('mouseleave',(event) => {
 })
 
 
-
 //******** Keydown Events:
+
 
 
 //******** Wheel Events: DONE
@@ -55,18 +55,39 @@ background.addEventListener('wheel', (event) => {
 
 //******** Drag/Drop Events:
 
-//******** Load Events:
+//******** Load Events: DONE!
+window.addEventListener('load', () => {
+    alert(`The page is loading`)
+})
+
 
 //******** Focus Events:
+let focus = document.querySelectorAll('.btn')
+
+focus.addEventListener('focus', () => {
+    focus.style.borderStyle = 'dotted'
+    focus.style.borderWidth = '2px'
+    focus.style.borderColor = 'green'
+}) 
+
 
 //******** Resize Events:
 
-//******** Scroll Events:
- window.addEventListener('scroll', (event) => {
-    document.getElementById('showScroll').innerHTML = pageYOffset + 'px';
+
+
+//******** Scroll Events: Done!!
+ window.addEventListener('scroll', () => {
+    console.log('Scrolled!')
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight
+    const scrolled = window.scrollY
+
+    if(Math.ceil(scrolled) === scrollable) {
+        alert('You have reached the bottom')
+    }
  })
 
 //******** Select Events:
+
 
 //******** dblClick Events: DONE
 const show = document.querySelector('.home')
@@ -76,15 +97,20 @@ hello.style.fontColor = 'black'
 hello.style.padding = '120px 0 0'
 hello.textContent ='Hello Travlers!'
 
-show.addEventListener('click', (event) => { 
+show.addEventListener('dblclick', () => { 
     console.log(`Hello has been clicked`)
     show.prepend(hello);
+    // show.classList.toggle(show.prepend(hello))
+
 })
 
 
+// want to remove
 
-show.addEventListener('dbclick', () => {
-    console.log(`Hello has been removed`)
-    hello.style.display = 'none'
-})
+
+
+// show.addEventListener('dbclick', () => {
+//     console.log(`Hello has been removed`)
+//     hello.style.display = 'none'
+// })
 
