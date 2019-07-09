@@ -1,5 +1,4 @@
-
-//******** Mouseover/out:
+//******** Mouseover/out: 1/2
 
 // let navLinks = document.querySelectorAll('.nav a')
 // let turnWhite = (color => {
@@ -12,77 +11,70 @@
 //     })
 // })
 
-let navLinks = document.querySelector('.nav-link')
+let navLinks = document.querySelector(".nav-link");
 
-navLinks.addEventListener('mouseover',(event) => {
-    console.log(`Navigation changed color`)
-    event.target.style.color = 'white'
-    // navLinks.forEach(color => color.style.color = 'white')
-}) //only home is working
+navLinks.addEventListener("mouseover", event => {
+  console.log(`Navigation changed color`);
+  event.target.style.color = "white";
+  // navLinks.forEach(color => color.style.color = 'white')
+}); //only home is working
 
+navLinks.addEventListener("mouseout", event => {
+  console.log(`Navigation changed color`);
+  event.target.style.color = "black";
+  // navLinks.forEach(color => color.style.color = 'white')
+}); //only home is working
 
-navLinks.addEventListener('mouseout',(event) => {
-    console.log(`Navigation changed color`)
-    event.target.style.color = 'black'
-    // navLinks.forEach(color => color.style.color = 'white')
-}) //only home is working
+//******** Mouseenter/leave:3/4
+const header = document.querySelector(".main-navigation");
 
-//******** Mouseenter/leave: DONE
-const header = document.querySelector('.main-navigation')
+header.addEventListener("mouseenter", event => {
+  console.log(`Header changed color`);
+  header.style.background = "	mediumturquoise";
+});
 
-header.addEventListener('mouseenter',(event) => {
-    console.log(`Header changed color`)
-    header.style.background = '	mediumturquoise'
-})
+header.addEventListener("mouseleave", event => {
+  console.log(`Header changed color`);
+  header.style.background = "white";
+});
 
-header.addEventListener('mouseleave',(event) => {
-    console.log(`Header changed color`)
-    header.style.background = 'white'
-})
+//******** Wheel Events: 5
+let background = document.querySelector(".home");
 
+background.addEventListener("wheel", event => {
+  console.log("Background changed to light peach!");
+  background.style.background = "#FDDED7";
+});
 
-//******** Wheel Events: DONE
-let background = document.querySelector('.home');
+// ******** Load Events: 6
+window.addEventListener("load", () => {
+  alert(`The page is loading`);
+});
 
-background.addEventListener('wheel', (event) => {
-    console.log('Background changed to light peach!')
-    background.style.background = '#FDDED7'
- 
-})
+// ******** Scroll Events: 7
+window.addEventListener("scroll", () => {
+  console.log("Scrolled!");
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = window.scrollY;
 
+  if (Math.ceil(scrolled) === scrollable) {
+    alert("You have reached the bottom");
+  }
+});
 
-//******** Load Events: DONE!
-// window.addEventListener('load', () => {
-//     alert(`The page is loading`)
-// })
+//******** dblClick Events: 8
+const show = document.querySelector(".home");
 
+const hello = document.createElement("h1");
+hello.style.fontColor = "black";
+hello.style.padding = "120px 0 0";
+hello.textContent = "Hello Travlers!";
 
-//******** Scroll Events: Done!!
-//  window.addEventListener('scroll', () => {
-//     console.log('Scrolled!')
-//     const scrollable = document.documentElement.scrollHeight - window.innerHeight
-//     const scrolled = window.scrollY
-
-//     if(Math.ceil(scrolled) === scrollable) {
-//         alert('You have reached the bottom')
-//     }
-//  })
-
-
-//******** dblClick Events: DONE
-const show = document.querySelector('.home')
-
-const hello = document.createElement('h1')
-hello.style.fontColor = 'black'
-hello.style.padding = '120px 0 0'
-hello.textContent ='Hello Travlers!'
-
-show.addEventListener('click', () => { 
-    console.log(`Hello has been clicked`)
-    // show.prepend(hello);
-    show.classList.toggle(show.prepend(hello))
-
-})
+show.addEventListener("click", () => {
+  console.log("Hello has been clicked");
+  // show.prepend(hello);
+  show.classList.toggle(show.prepend(hello));
+});
 
 // want to remove
 
@@ -93,29 +85,27 @@ show.addEventListener('click', () => {
 
 // input
 
+//******** focus Events: 9
 
-//******** focus Events: DONE
+const newForm = document.querySelector(".home");
 
-const newForm = document.querySelector('.home')
+const form = document.createElement("input");
+form.style.margin = "20px";
 
-const form = document.createElement('input')
-form.style.margin = "20px"
+newForm.appendChild(form);
 
-newForm.appendChild(form)
-
- 
-form.addEventListener('focus', () => {
-    console.log(`form has been selected`)
-    form.style.background = 'cyan'
-})
+form.addEventListener("focus", () => {
+  console.log(`form has been selected`);
+  form.style.background = "cyan";
+});
 
 //******** keydown Select: DONE
-const main = document.querySelector('.destination')
+const main = document.querySelector(".destination");
 
- addEventListener('keydown', (event) => {
-    console.log('Background changed back to white!')
-     if(event.keycode == 86) {//keycode is the letter v
-         main.style.background = 'white'
-     }
- })
-
+addEventListener("keydown", event => {
+  console.log("Background changed back to white!");
+  if (event.keycode == 86) {
+    //keycode is the letter v
+    main.style.background = "white";
+  }
+});
