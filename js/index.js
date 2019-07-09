@@ -1,6 +1,7 @@
 // Your code goes here
+
 //******** Mouseover/out:
-let navLinks = document.querySelectorAll('.nav-link')
+const navLinks = document.querySelectorAll('.nav-link')
 // console.log(navLinks, 'navLinks')
 
 navLinks.forEach(a => {
@@ -11,13 +12,20 @@ navLinks.forEach(a => {
 
     setTimeout( () => {
       event.target.style.color ="";
-    }, 800)
+    }, 5000)
+  })
+})
+
+navLinks.forEach(a => {
+  // console.log(a)
+  a.addEventListener('mouseout', event => {
+    console.log(`Navigation changed black`)
+    event.target.style.color = '#212529'
   })
 })
 
 
-
-// //******** Mouseenter/leave: 
+//******** Mouseenter: 
 const header = document.querySelector('.main-navigation')
 
 header.addEventListener('mouseenter',(event) => {
@@ -25,7 +33,16 @@ header.addEventListener('mouseenter',(event) => {
     header.style.background = '	mediumturquoise'
 })
 
-header.addEventListener('mouseleave',(event) => {
-    console.log(`Header changed to white`)
-    header.style.background = 'white'
-})
+//******** scroll: 
+ const navBar = document.querySelector('.main-navigation')
+
+ window.addEventListener('scroll', event => {
+   const knownPosition = window.scrollY
+
+   if(knownPosition > 50) {
+     navBar.style.backgroundColor = '#17A2B8'
+     console.log('window scrolled')
+   } else if( knownPosition < 50) {
+    navBar.style.backgroundColor = 'white'
+   }
+ })
