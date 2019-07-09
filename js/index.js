@@ -1,9 +1,6 @@
-
-
 // Your code goes here
 //******** Mouseover/out:
 let navLinks = document.querySelectorAll('.nav-link')
-
 // console.log(navLinks, 'navLinks')
 
 navLinks.forEach(a => {
@@ -18,13 +15,6 @@ navLinks.forEach(a => {
   })
 })
 
-// navLinks.forEach(a => {
-//   // console.log(a)
-//   a.addEventListener('mouseout', event => {
-//     console.log(`Navigation changed black`)
-//     event.target.style.color = '#212529'
-//   })
-// })
 
 
 // //******** Mouseenter/leave: 
