@@ -215,6 +215,34 @@ img {
   color: #212529;
   text-decoration: none;
 }
+.debug-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.debug-container .debug-box {
+  position: fixed;
+  top: 0;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  color: #333;
+  font-weight: 700;
+  padding: 1.6rem;
+  opacity: 0.8;
+  /*   margin: 1.2rem; */
+}
+.debug-container .debug-box .small {
+  width: 60px;
+}
+.debug-container .debug-box div {
+  overflow: hidden;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
