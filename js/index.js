@@ -1,89 +1,112 @@
-// Your code goes here
 
-//******** Mouseover/out:
-const navLinks = document.querySelectorAll('.nav-link')
-// console.log(navLinks, 'navLinks')
+//******** Mouseover/out: 1/2
 
-navLinks.forEach(a => {
-  // console.log(a)
-  a.addEventListener('mouseover', event => {
-    console.log(`Navigation changed to white`)
-    event.target.style.color = 'white'
+// let navLinks = document.querySelectorAll('.nav a')
+// let turnWhite = (color => {
+//     color.style.fontColor = 'white'
+// })
 
-    setTimeout( () => {
-      event.target.style.color ="";
-    }, 5000)
-  })
-})
+// navLinks.forEach(anchor => {
+//     anchor.addEventListener('mouseover', event=> {
+//         event.target.classList.toggle(turnWhite)
+//     })
+// })
 
-navLinks.forEach(a => {
-  // console.log(a)
-  a.addEventListener('mouseout', event => {
-    // console.log(`Navigation changed black`)
-    event.target.style.color = '#212529'
-  })
-})
+let navLinks = document.querySelector(".nav-link");
 
+navLinks.addEventListener("mouseover", event => {
+  console.log(`Navigation changed color`);
+  event.target.style.color = "white";
+  // navLinks.forEach(color => color.style.color = 'white')
+}); //only home is working
 
-//******** Mouseenter: 
-const header = document.querySelector('.main-navigation')
+navLinks.addEventListener("mouseout", event => {
+  console.log(`Navigation changed color`);
+  event.target.style.color = "black";
+  // navLinks.forEach(color => color.style.color = 'white')
+}); //only home is working
 
-header.addEventListener('mouseenter',(event) => {
-    // console.log(`Header changed to turquoise`)
-    header.style.background = '	mediumturquoise'
-})
+//******** Mouseenter/leave:3/4
+const header = document.querySelector(".main-navigation");
 
-//******** Keydown Select:
-const main = document.querySelector('.home')
-// console.log(main, 'main')
+header.addEventListener("mouseenter", event => {
+  console.log(`Header changed color`);
+  header.style.background = "	mediumturquoise";
+});
 
-addEventListener('keydown', (event) => {
-    console.log('Background changed back to white!')
-     if(event.keycode == 86) {//keycode is the letter v
-         main.style.background = 'white'
-         console.log('The V key has been pressed')
-     }
- })
+header.addEventListener("mouseleave", event => {
+  console.log(`Header changed color`);
+  header.style.background = "white";
+});
 
-//******** Wheel :
+//******** Wheel Events: 5
+let background = document.querySelector(".home");
 
-let background = document.querySelector('body');
+background.addEventListener("wheel", event => {
+  console.log("Background changed to light peach!");
+  background.style.background = "#FDDED7";
+});
 
-background.addEventListener('wheel', (event) => {
-    // console.log('Background changed to light peach!')
-    background.style.background = '#FDDED7'
- 
-})
+// ******** Load Events: 6
+window.addEventListener("load", () => {
+  alert(`The page is loading`);
+});
 
-//******** Focus:
+// ******** Scroll Events: 7
+window.addEventListener("scroll", () => {
+  console.log("Scrolled!");
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = window.scrollY;
 
-const newForm = document.querySelector('.home')
+  if (Math.ceil(scrolled) === scrollable) {
+    alert("You have reached the bottom");
+  }
+});
 
-const form = document.createElement('input')
-form.style.margin = "20px"
+//******** dblClick Events: 8
+const show = document.querySelector(".home");
 
-newForm.appendChild(form)
+const hello = document.createElement("h1");
+hello.style.fontColor = "black";
+hello.style.padding = "120px 0 0";
+hello.textContent = "Hello Travlers!";
 
- 
-form.addEventListener('focus', () => {
-    console.log(`form has been selected`)
-    form.style.background = '#FFEBCD'
-})
+show.addEventListener("click", () => {
+  console.log("Hello has been clicked");
+  // show.prepend(hello);
+  show.classList.toggle(show.prepend(hello));
+});
 
-//******** Load: 
-window.addEventListener('load', () => {
-  alert(`The page has loaded`)
-})
+// want to remove
 
-//******** Scroll: 
- const navBar = document.querySelector('.main-navigation')
+// show.addEventListener('dbclick', () => {
+//     console.log(`Hello has been removed`)
+//     hello.style.display = 'none'
+// })
 
- window.addEventListener('scroll', event => {
-   const knownPosition = window.scrollY
+// input
 
-   if(knownPosition > 50) {
-     navBar.style.background = '#17A2B8'
-   } else if( knownPosition < 50) {
-    navBar.style.background = 'white'
-   }
- })
+//******** focus Events: 9
+
+const newForm = document.querySelector(".home");
+
+const form = document.createElement("input");
+form.style.margin = "20px";
+
+newForm.appendChild(form);
+
+form.addEventListener("focus", () => {
+  console.log(`form has been selected`);
+  form.style.background = "cyan";
+});
+
+//******** keydown Select: DONE
+const main = document.querySelector(".destination");
+
+addEventListener("keydown", event => {
+  console.log("Background changed back to white!");
+  if (event.keycode == 86) {
+    //keycode is the letter v
+    main.style.background = "white";
+  }
+});

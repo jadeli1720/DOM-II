@@ -19,6 +19,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 * [x] Add your project manager as a reviewer on the pull-request
 * [x] Your project manager will count the project as complete by merging the branch back into master.
 
+
 ## Task 1: Set Up LESS Preprocessor
 
 * [x] Verify that you have LESS installed correctly by running `lessc -v` in your terminal, if you don't get a version message back, reach out to your project manager for help.
@@ -33,18 +34,17 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
 ## Task 2: Create Unique Event Listeners
 
-* [] Using your [index.js file](js/index.js), create 10 [unique event listeners](https://developer.mozilla.org/en-US/docs/Web/Events). using your creativity to make the Fun Bus site more interactive.  Here are some unique events you could try to use: 
-	* [x] `mouseover/out`
-	* [x] `mouseenter/leave`
-	* [ ] `keydown`
+* [ ] Using your [index.js file](js/index.js), create 10 [unique event listeners](https://developer.mozilla.org/en-US/docs/Web/Events). using your creativity to make the Fun Bus site more interactive.  Here are some unique events you could try to use: 
+	* [x] `mouseover`
+	* [x] `keydown`
 	* [x] `wheel`
-	* [ ] `drag / drop`
-	* [ ] `load`
+	* [x] `mouseleave`
+	* [x] `load`
 	* [x] `focus`
-	* [ ] `resize`
+	* [x] `mouseout`
 	* [x] `scroll`
 	* [ ] `select`
-	* [ ] `dblclick`
+	* [x] `dblclick`
 
 Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
 
